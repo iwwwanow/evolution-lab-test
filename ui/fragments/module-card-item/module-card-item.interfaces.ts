@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import type { StyleSheet } from "react-native";
 
 export enum ModuleStatus {
   Done = "done",
