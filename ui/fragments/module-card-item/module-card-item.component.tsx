@@ -1,6 +1,7 @@
 import { Text } from "react-native";
 import { Card } from "react-native-paper";
 import { moduleCardStyles } from "./module-card-item.style";
+import { TouchableOpacity } from "react-native";
 
 import type { ModuleCardItemProps } from "./module-card-item.interfaces";
 import type { FC } from "react";
@@ -14,13 +15,14 @@ export const ModuleCardItem: FC<ModuleCardItemProps> = (props) => {
   });
 
   return (
-    <Card
-      onPress={handlePress}
-      style={{ ...moduleCardStyles.container, ...variantStyles.container }}
-    >
-      <Text style={{ ...moduleCardStyles.text, ...variantStyles.text }}>
-        {title}
-      </Text>
-    </Card>
+    <TouchableOpacity onPress={handlePress} activeOpacity={0.7}>
+      <Card
+        style={{ ...moduleCardStyles.container, ...variantStyles.container }}
+      >
+        <Text style={{ ...moduleCardStyles.text, ...variantStyles.text }}>
+          {title}
+        </Text>
+      </Card>
+    </TouchableOpacity>
   );
 };
